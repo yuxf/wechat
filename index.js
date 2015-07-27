@@ -29,13 +29,13 @@ app.listen(app.get('port'), function() {
 
 function checkSignature(req)
 {
-  my signature = req.query.signature;
-  my timestamp = req.query.timestamp;
-  my nonce = req.query.nonce;  
+  var signature = req.query.signature;
+  var timestamp = req.query.timestamp;
+  var nonce = req.query.nonce;  
   
-  my token = TOKEN;
-  my tmpArr = [token, timestamp, nonce];
-  my sha1Str = sha1(sort($tmpArr).concat(""));
+  var token = TOKEN;
+  var tmpArr = [token, timestamp, nonce];
+  var sha1Str = sha1(sort($tmpArr).concat(""));
   
   if( sha1Str.localeCompare(signature) == 0 ){
     return true;
