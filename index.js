@@ -36,7 +36,7 @@ function checkSignature(req)
   
   var token = TOKEN;
   var tmpArr = [token, timestamp, nonce];
-  var sha1Str = sha1(sort($tmpArr).concat(""));
+  var sha1Str = sha1(sort(tmpArr).concat(""));
   
   if( sha1Str.localeCompare(signature) == 0 ){
     return true;
