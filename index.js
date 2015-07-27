@@ -33,7 +33,10 @@ app.get('/', function(request, response) {
 app.use(express.query());
 app.use('/', wechat(TOKEN, function (req, res, next) {
   console.log(req.weixin);
-  res.reply(req.weixin);
+  res.reply({
+      content: 'hehe',
+      type: 'text'
+    });
 }));
 
 
