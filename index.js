@@ -29,14 +29,14 @@ app.get('/', function(request, response) {
     response.send("Hello");
   }
 });
-
+*/
 app.use(express.query());
 app.use('/', wechat(TOKEN, function (req, res, next) {
   console.log(req.weixin);
   res.send("req.weixin");
 }));
 
-
+/*
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
 });
