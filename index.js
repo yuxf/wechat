@@ -15,7 +15,7 @@ var config = {
 };
 
 var express = require('express');
-var crypto = require('crypto')
+// var crypto = require('crypto')
 var app = express();
 
 app.set('port', (process.env.PORT || 5000));
@@ -59,7 +59,8 @@ function checkSignature(req)
     return false;
   }
 }
-
+/*
 function sha1(input){
   return crypto.createHash('sha1').update(input).digest('hex')
 }
+*/
