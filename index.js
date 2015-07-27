@@ -5,7 +5,7 @@ wechat.List = require('./lib/list');
 wechat.Event = require('./lib/events');
 
 module.exports = wechat;
-
+/*
 TOKEN = "feiyuitravel";
 
 var config = {
@@ -63,3 +63,4 @@ function checkSignature(req)
 function sha1(input){
   return crypto.createHash('sha1').update(input).digest('hex')
 }
+*/
