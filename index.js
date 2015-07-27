@@ -48,5 +48,5 @@ function checkSignature(req)
 }
 
 function sha1(input){
-  return crypto.createHash('sha1').update(JSON.stringify(input)).digest('hex')
+  return crypto.createHash('sha1').update(input).digest('hex')
 }
