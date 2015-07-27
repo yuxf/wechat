@@ -13,10 +13,9 @@ var config = {
   appid: 'wx5d34f7a9cb77d517',
   encodingAESKey: '5FLR9cvgrcA4XdaUA1KffSAlZ058bqXHVCigcEzcxij'
 };
-
+*/
 var express = require('express');
 var crypto = require('crypto')
-*/
 var app = express();
 /*
 app.set('port', (process.env.PORT || 5000));
