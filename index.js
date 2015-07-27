@@ -11,12 +11,11 @@ TOKEN = "feiyuitravel";
 var config = {
   token: TOKEN,
   appid: 'wx5d34f7a9cb77d517',
-  encodingAESKey: 'e2ff38cc3170554cb168766c566788c8'
+  encodingAESKey: '5FLR9cvgrcA4XdaUA1KffSAlZ058bqXHVCigcEzcxij'
 };
 
 var express = require('express');
 var crypto = require('crypto')
-var wechat = require('wechat');
 var app = express();
 
 app.set('port', (process.env.PORT || 5000));
@@ -31,8 +30,8 @@ app.get('/', function(request, response) {
   }
 });
 
-app.use(express.query());
-app.ues('/wechat', wechat(config, function (req, res, next) {
+//app.use(express.query());
+app.post('/wechat', wechat(config, function (req, res, next) {
   console.log(req.weixin);
   res.send("req.weixin");
 }));
