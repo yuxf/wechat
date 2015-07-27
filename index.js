@@ -34,7 +34,7 @@ var config = {
 app.post('/wechat', wechat(config, function (req, res, next) {
   console.log(req.weixin);
   res.send("req.weixin");
-});
+}));
 
 
 app.listen(app.get('port'), function() {
