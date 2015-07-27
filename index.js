@@ -9,6 +9,7 @@ module.exports = wechat;
 TOKEN = "feiyuitravel";
 
 var express = require('express');
+var crypto = require('crypto')
 var app = express();
 
 app.set('port', (process.env.PORT || 5000));
@@ -42,4 +43,8 @@ function checkSignature(req)
   }else{
     return false;
   }
+}
+
+function sha1(input){
+  return crypto.createHash('sha1').update(JSON.stringify(input)).digest('hex')
 }
