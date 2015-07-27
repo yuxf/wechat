@@ -24,6 +24,19 @@ app.get('/', function(request, response) {
   }
 });
 
+
+var config = {
+  token: TOKEN,
+  appid: 'wx5d34f7a9cb77d517',
+  encodingAESKey: 'e2ff38cc3170554cb168766c566788c8'
+};
+
+app.post('/wechat', wechat(config, function (req, res, next) {
+  console.log(req.weixin);
+  res.send("req.weixin");
+});
+
+
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
 });
