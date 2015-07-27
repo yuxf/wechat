@@ -30,8 +30,8 @@ app.get('/', function(request, response) {
   }
 });
 
-//app.use(express.query());
-app.post('/wechat', wechat(config, function (req, res, next) {
+app.use(express.query());
+app.post('/', wechat(config, function (req, res, next) {
   console.log(req.weixin);
   res.send("req.weixin");
 }));
