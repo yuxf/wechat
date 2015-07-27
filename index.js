@@ -6,17 +6,40 @@ wechat.Event = require('./lib/events');
 
 module.exports = wechat;
 
+TOKEN = "feiyuitravel";
+
 var express = require('express');
 var app = express();
 
 app.set('port', (process.env.PORT || 5000));
 
 app.get('/', function(request, response) {
-  var echoString = request.query.echostr;
-  console.log("echoString = ", echoString);
-  response.send(echoString);
+  if(checkSignature(request)) {
+    var echoString = request.query.echostr;
+    response.send(echoString);
+  }
+  else {
+    response.send("Hello");
+  }
 });
 
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
 });
+
+function checkSignature(req)
+{
+  my signature = req.query.signature;
+  my timestamp = req.query.timestamp;
+  my nonce = req.query.nonce;  
+  
+  my token = TOKEN;
+  my tmpArr = [token, timestamp, nonce];
+  my sha1Str = sha1(sort($tmpArr).concat(""));
+  
+  if( sha1Str.localeCompare(signature) == 0 ){
+    return true;
+  }else{
+    return false;
+  }
+}
