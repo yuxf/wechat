@@ -36,7 +36,7 @@ function checkSignature(req)
   
   var token = TOKEN;
   var tmpArr = [token, timestamp, nonce];
-  console.log(tmpArr);
+  console.log(tmpArr.sort().concat(""));
   var sha1Str = sha1(tmpArr.sort().concat(""));
   console.log(sha1Str + " ... " + signature);
 
