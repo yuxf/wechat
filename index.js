@@ -5,9 +5,10 @@ wechat.List = require('./lib/list');
 wechat.Event = require('./lib/events');
 
 module.exports = wechat;
-/*
+
 TOKEN = "feiyuitravel";
 
+/*
 var config = {
   token: TOKEN,
   appid: 'wx5d34f7a9cb77d517',
