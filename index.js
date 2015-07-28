@@ -26,14 +26,14 @@ app.listen(app.get('port'), function() {
 
 app.use('/', wechat(config).text(function (message, req, res, next) {
   console.log(req.weixin);
-  res.reply(
+  res.reply([
 		  {
 		    title: '你来我家接我吧',
 		    description: '这是女神与高富帅之间的对话',
 		    picurl: 'http://nodeapi.cloudfoundry.com/qrcode.jpg',
 		    url: 'http://nodeapi.cloudfoundry.com/'
 		  }
-	   );
+	   ]);
 }).image(function (message, req, res, next) {
 
 }).voice(function (message, req, res, next) {
