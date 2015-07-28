@@ -24,7 +24,7 @@ app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
 });
 
-app.use('/', (config, wechat.text(function (req, res, next) {
+app.use('/', wechat(config).text(function (req, res, next) {
   console.log(req.weixin);
   res.reply([
 		  {
@@ -52,6 +52,6 @@ app.use('/', (config, wechat.text(function (req, res, next) {
 
 }).device_event(function (message, req, res, next) {
 
-})
-));
+}).middlewarify()
+);
 
