@@ -48,7 +48,7 @@ var content = [
         ]
 ]
 
-var List = require('wechat').List;
+var List = wechat.List;
 List.add('今天的榜单', [
   ['回复{1}试试', function (info, req, res) {
     res.reply(content[0]);
