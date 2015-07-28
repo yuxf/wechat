@@ -14,11 +14,10 @@ var config = {
   encodingAESKey: '5FLR9cvgrcA4XdaUA1KffSAlZ058bqXHVCigcEzcxij'
 };
 
-var express = require('express');
-var app = express();
+var connect = require('connect');
+var app = connect();
 
 app.set('port', (process.env.PORT || 5000));
-app.use(express.query());
 
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
@@ -51,8 +50,31 @@ var content = [
         ]
 ]
 
+var List = require('wechat').List;
+List.add('今天的榜单', [
+  ['回复{1}试试', function (info, req, res) {
+    res.reply(content[0]);
+  }],
+  ['回复{2}试试', function (info, req, res) {
+    res.reply(content[1]);
+  }],
+  ['回复{3}试试', function (info, req, res) {
+    res.reply(content[2]);
+  }]
+]);
+
+app.use(connect.query());
+app.use(connect.cookieParser());
+app.use(connect.session({secret: 'keyboard cat', cookie: {maxAge: 60000}}));
+
 app.use('/', wechat(config).text(function (message, req, res, next) {
   console.log(req.weixin);
+  if (message.Content === 'list') {
+    res.wait('view');
+  } else {
+    // 中断等待回复事务
+    res.nowait('不来瞎玩的，算了不跟你玩了');
+  }
   res.reply(content[Math.floor(Math.random() * content.length)]);
 }).image(function (message, req, res, next) {
   res.reply('image');
