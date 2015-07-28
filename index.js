@@ -49,7 +49,7 @@ var content = [
 ]
 
 var List = wechat.List;
-List.add('今天的榜单', [
+List.add('category', [
   ['回复{1}试试', function (info, req, res) {
     res.reply(content[0]);
   }],
@@ -68,7 +68,7 @@ app.use(connect.session({secret: 'keyboard cat', cookie: {maxAge: 60000}}));
 app.use('/', wechat(config).text(function (message, req, res, next) {
   console.log(req.weixin);
   if (message.Content === 'list') {
-    res.wait('view');
+    res.wait('category');
   } else {
     // 中断等待回复事务
     res.nowait('不来瞎玩的，算了不跟你玩了');
