@@ -73,7 +73,7 @@ app.use('/', wechat(config).text(function (message, req, res, next) {
     // 中断等待回复事务
     res.nowait('不来瞎玩的，算了不跟你玩了');
   }
-  res.reply(content[Math.floor(Math.random() * content.length)]);
+  // res.reply(content[Math.floor(Math.random() * content.length)]);
 }).image(function (message, req, res, next) {
   res.reply('image');
 }).voice(function (message, req, res, next) {
