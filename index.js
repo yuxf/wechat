@@ -36,7 +36,8 @@ app.use('/', wechat(config).text(function (req, res, next) {
 		  }
 	   );
 */
-}).image(function (message, req, res, next) {
+})
+/*.image(function (message, req, res, next) {
 
 }).voice(function (message, req, res, next) {
 
@@ -55,5 +56,6 @@ app.use('/', wechat(config).text(function (req, res, next) {
 }).device_event(function (message, req, res, next) {
 
 }).middlewarify()
+*/
 );
 
