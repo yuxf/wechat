@@ -18,7 +18,7 @@ var connect = require('connect');
 var app = connect();
 
 app.listen((process.env.PORT || 5000), function() {
-  console.log('Node app is running on port', app.get('port'));
+  console.log('Node app is running on port', (process.env.PORT || 5000));
 });
 
 var content = [
