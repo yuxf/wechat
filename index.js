@@ -29,7 +29,7 @@ var content = [
                   {
                     title: 'ukulili',
                     description: '这是今天晚饭前的娱乐',
-                    picurl:'http://img6.douban.com/lpic/s27284878.jpg', 
+                    picurl:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Ukulele1_HiRes.jpg/138px-Ukulele1_HiRes.jpg', 
                     url: 'https://en.wikipedia.org/wiki/Ukulele'
                   }
         ],
@@ -37,10 +37,18 @@ var content = [
 		  {
                     title: '湾区好室友',
                     description: '好室友连接地球and火星人',
-                    picurl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Ukulele1_HiRes.jpg/138px-Ukulele1_HiRes.jpg',
+                    picurl: 'http://img6.douban.com/lpic/s27284878.jpg',
                     url: 'http://test-haoshiyou.herokuapp.com/'
                   }
-	]
+	],
+        [
+                  {
+                    title: '网球拍哪家强',
+                    description: '我想买个网球拍好好学下网球',
+                    picurl: 'http://cdn.tennis.com/uploads/img/2012/08/13/2012_08_13_racquet/article.jpeg',
+                    url: 'http://www.tennis.com/shop/2012/02/new-to-tennis-a-brief-racquet-primer-for-beginners/34762/#.VbZGxOhViko'
+                  }
+        ]
 ]
 
 app.use('/', wechat(config).text(function (message, req, res, next) {
