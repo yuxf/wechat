@@ -28,10 +28,10 @@ app.use('/', wechat(config).text(function (message, req, res, next) {
   console.log(req.weixin);
   res.reply([
 		  {
-		    title: '你来我家接我吧',
-		    description: '这是女神与高富帅之间的对话',
-		    picurl: 'http://nodeapi.cloudfoundry.com/qrcode.jpg',
-		    url: 'http://nodeapi.cloudfoundry.com/'
+		    title: 'ukulili',
+		    description: '这是今天晚饭前的娱乐',
+		    picurl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Ukulele1_HiRes.jpg/138px-Ukulele1_HiRes.jpg',
+		    url: 'https://en.wikipedia.org/wiki/Ukulele'
 		  }
 	   ]);
 }).image(function (message, req, res, next) {
