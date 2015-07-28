@@ -27,7 +27,7 @@ app.listen(app.get('port'), function() {
 var content = [
 	[
                   {
-                    title: 'ukulili',
+                    title: 'ukulele',
                     description: '这是今天晚饭前的娱乐',
                     picurl:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Ukulele1_HiRes.jpg/138px-Ukulele1_HiRes.jpg', 
                     url: 'https://en.wikipedia.org/wiki/Ukulele'
@@ -55,23 +55,23 @@ app.use('/', wechat(config).text(function (message, req, res, next) {
   console.log(req.weixin);
   res.reply(content[Math.floor(Math.random() * content.length)]);
 }).image(function (message, req, res, next) {
-
+  res.reply('image');
 }).voice(function (message, req, res, next) {
-
+  res.reply('voice');
 }).video(function (message, req, res, next) {
-
+  res.reply('video');
 }).shortvideo(function (message, req, res, next) {
-
+  res.reply('shortvideo');
 }).location(function (message, req, res, next) {
-
+  res.reply('location');
 }).link(function (message, req, res, next) {
-
+  res.reply('link');
 }).event(function (message, req, res, next) {
-
+  res.reply('event');
 }).device_text(function (message, req, res, next) {
-
+  res.reply('device_text');
 }).device_event(function (message, req, res, next) {
-
+  res.reply('device_event');
 }).middlewarify()
 );
 
