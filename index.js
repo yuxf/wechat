@@ -24,16 +24,28 @@ app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
 });
 
+var content = [
+	[
+                  {
+                    title: 'ukulili',
+                    description: '这是今天晚饭前的娱乐',
+                    picurl:'http://img6.douban.com/lpic/s27284878.jpg', 
+                    url: 'https://en.wikipedia.org/wiki/Ukulele'
+                  }
+        ],
+	[
+		  {
+                    title: '湾区好室友',
+                    description: '好室友连接地球and火星人',
+                    picurl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Ukulele1_HiRes.jpg/138px-Ukulele1_HiRes.jpg',
+                    url: 'http://test-haoshiyou.herokuapp.com/'
+                  }
+	]
+]
+
 app.use('/', wechat(config).text(function (message, req, res, next) {
   console.log(req.weixin);
-  res.reply([
-		  {
-		    title: 'ukulili',
-		    description: '这是今天晚饭前的娱乐',
-		    picurl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Ukulele1_HiRes.jpg/138px-Ukulele1_HiRes.jpg',
-		    url: 'https://en.wikipedia.org/wiki/Ukulele'
-		  }
-	   ]);
+  res.reply(content[Math.floor(Math.random() * content.length)]);
 }).image(function (message, req, res, next) {
 
 }).voice(function (message, req, res, next) {
