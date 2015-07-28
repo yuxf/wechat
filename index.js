@@ -67,12 +67,7 @@ app.use(connect.session({secret: 'keyboard cat', cookie: {maxAge: 60000}}));
 
 app.use('/', wechat(config).text(function (message, req, res, next) {
   console.log(req.weixin);
-  if (message.Content === 'list') {
-    res.wait('category');
-  } else {
-    // 中断等待回复事务
-    res.nowait('不来瞎玩的，算了不跟你玩了');
-  }
+  res.wait('category');
   // res.reply(content[Math.floor(Math.random() * content.length)]);
 }).image(function (message, req, res, next) {
   res.reply('image');
