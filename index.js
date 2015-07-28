@@ -55,7 +55,7 @@ app.use('/', wechat(config).text(function (req, res, next) {
 
 }).device_event(function (message, req, res, next) {
 
-}).middlewarify()
-*/
+}) */
+.middlewarify()
 );
 
