@@ -26,6 +26,7 @@ app.listen(app.get('port'), function() {
 
 app.use('/', wechat(config).text(function (req, res, next) {
   console.log(req.weixin);
+/*
   res.reply(
 		  {
 		    title: '你来我家接我吧',
@@ -34,6 +35,7 @@ app.use('/', wechat(config).text(function (req, res, next) {
 		    url: 'http://nodeapi.cloudfoundry.com/'
 		  }
 	   );
+*/
 }).image(function (message, req, res, next) {
 
 }).voice(function (message, req, res, next) {
