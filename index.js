@@ -8,10 +8,8 @@ module.exports = wechat;
 
 // ===========
 
-TOKEN = "feiyuitravel";
-
 var config = {
-  token: TOKEN,
+  token: 'feiyuitravel',
   appid: 'wx5d34f7a9cb77d517',
   encodingAESKey: '5FLR9cvgrcA4XdaUA1KffSAlZ058bqXHVCigcEzcxij'
 };
